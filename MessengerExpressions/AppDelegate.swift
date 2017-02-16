@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import FBSDKMessengerShareKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, FBSDKMessengerURLHandlerDelegate {
 
     var window: UIWindow?
-
+    let messengerUrlHandler = FBSDKMessengerURLHandler()
+    var contextFBMessenger: FBSDKMessengerContext?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        messengerUrlHandler.delegate = self
         return true
     }
 
@@ -41,6 +44,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    public func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if messengerUrlHandler.canOpen(url, sourceApplication: sourceApplication) {
+            messengerUrlHandler.open(url, sourceApplication: sourceApplication)
+        }
+        
+        return true
+    }
+    
+    func messengerURLHandler(_ messengerURLHandler: FBSDKMessengerURLHandler!, didHandleReplyWith context: FBSDKMessengerURLHandlerReplyContext!) {
+        contextFBMessenger = context
+    }
+    
+    func messengerURLHandler(_ messengerURLHandler: FBSDKMessengerURLHandler!, didHandleOpenFromComposerWith context: FBSDKMessengerURLHandlerOpenFromComposerContext!) {
+        contextFBMessenger = context
+    }
+    
+    func messengerURLHandler(_ messengerURLHandler: FBSDKMessengerURLHandler!, didHandleCancelWith context: FBSDKMessengerURLHandlerCancelContext!) {
+        contextFBMessenger = context
+    }
 }
 
