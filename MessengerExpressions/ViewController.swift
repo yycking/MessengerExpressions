@@ -102,10 +102,11 @@ class ViewController: UIViewController {
     
     // MARK: - FaceBook
     func initFB() {
-        let icon = UIImage(named:"messenger")?.withRenderingMode(.alwaysOriginal)
-        let button = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(share))
-
-        navigationItem.setRightBarButton(button, animated: true)
+        let width = (self.navigationController?.navigationBar.frame.size.height ?? 44) - 8
+        let button = FBSDKMessengerShareButton.circularButton(with: .blue, width: width)
+        button?.addTarget(self, action: #selector(share), for: .touchUpInside)
+        let buttonItem = UIBarButtonItem(customView: button!)
+        navigationItem.setRightBarButton(buttonItem, animated: true)
     }
     
     func share() {
