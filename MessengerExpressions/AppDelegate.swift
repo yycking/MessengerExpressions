@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+
 import FBSDKMessengerShareKit
 
 @UIApplicationMain
@@ -54,6 +56,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FBSDKMessengerURLHandlerD
     
     func messengerURLHandler(_ messengerURLHandler: FBSDKMessengerURLHandler!, didHandleReplyWith context: FBSDKMessengerURLHandlerReplyContext!) {
         contextFBMessenger = context
+        
+        guard let navigationController =  window?.rootViewController as? UINavigationController else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        object_setClass(controller, ReplyViewController.self)
+        
+        guard let replyController =  controller as? ReplyViewController else { return }
+        replyController.region = context.metadata.toCoordinateRegion()
+        
+        navigationController.pushViewController(replyController, animated: false)
     }
     
     func messengerURLHandler(_ messengerURLHandler: FBSDKMessengerURLHandler!, didHandleOpenFromComposerWith context: FBSDKMessengerURLHandlerOpenFromComposerContext!) {

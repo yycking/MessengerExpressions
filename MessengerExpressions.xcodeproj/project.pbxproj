@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF94E39C1E5A9A3C00867BB3 /* MKCoordinateRegion+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94E39B1E5A9A3B00867BB3 /* MKCoordinateRegion+String.swift */; };
+		AF94E39E1E5AAC8700867BB3 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94E39D1E5AAC8700867BB3 /* ReplyViewController.swift */; };
 		AFEE693B1E545427006B96E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE693A1E545427006B96E2 /* AppDelegate.swift */; };
 		AFEE693D1E545427006B96E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE693C1E545427006B96E2 /* ViewController.swift */; };
 		AFEE69401E545427006B96E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFEE693E1E545427006B96E2 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF94E39B1E5A9A3B00867BB3 /* MKCoordinateRegion+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+String.swift"; sourceTree = "<group>"; };
+		AF94E39D1E5AAC8700867BB3 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		AF9721CB1E555AF9002ECFAC /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		AFEE69371E545427006B96E2 /* MessengerExpressions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerExpressions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEE693A1E545427006B96E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				AFEE69461E545427006B96E2 /* Info.plist */,
 				AF9721CB1E555AF9002ECFAC /* Config.xcconfig */,
 				AFEE694C1E5461A3006B96E2 /* FBSDKMessengerShareKit.framework */,
+				AF94E39B1E5A9A3B00867BB3 /* MKCoordinateRegion+String.swift */,
+				AF94E39D1E5AAC8700867BB3 /* ReplyViewController.swift */,
 			);
 			path = MessengerExpressions;
 			sourceTree = "<group>";
@@ -143,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF94E39C1E5A9A3C00867BB3 /* MKCoordinateRegion+String.swift in Sources */,
 				AFEE693D1E545427006B96E2 /* ViewController.swift in Sources */,
 				AFEE693B1E545427006B96E2 /* AppDelegate.swift in Sources */,
+				AF94E39E1E5AAC8700867BB3 /* ReplyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

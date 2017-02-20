@@ -2,4 +2,8 @@
 
 Sample for Facebook Messenger - Expressions   
 
-![app](doc/app.png) <=> ![messenger](doc/messenger.png)
+share to Messenger   
+![app](doc/app.png) => ![share](doc/share.png)   
+
+reply from Messenger   
+![messenger](doc/messenger.png) <=> ![reply](doc/reply.png)   
