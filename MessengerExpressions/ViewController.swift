@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             
             let appDelegate = UIApplication.shared.delegate as? AppDelegate
             let shareOptions = FBSDKMessengerShareOptions()
-            shareOptions.metadata = options.region.toString()
+            shareOptions.metadata = String(describing: options.region)
             shareOptions.contextOverride = appDelegate?.contextFBMessenger
             FBSDKMessengerSharer.share(snapshot.image, with: shareOptions)
         }

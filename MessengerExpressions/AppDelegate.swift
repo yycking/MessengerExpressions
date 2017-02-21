@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FBSDKMessengerURLHandlerD
         object_setClass(controller, ReplyViewController.self)
         
         guard let replyController =  controller as? ReplyViewController else { return }
-        replyController.region = context.metadata.toCoordinateRegion()
+        replyController.region = MKCoordinateRegion(string: context.metadata)
         
         navigationController.pushViewController(replyController, animated: false)
     }
