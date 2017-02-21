@@ -25,11 +25,11 @@ extension JSONSerializable {
             case let value where JSONSerialization.isValidJSONObject(value):
                 representation[label] = value
                 
-            case let value as CustomStringConvertible:
-                representation[label] = value
-                
             case let value as JSONSerializable:
                 representation[label] = value.json
+                
+            case let value as CustomStringConvertible:
+                representation[label] = value
                 
             default:
                 // Ignore any unserializable properties
